@@ -1,0 +1,25 @@
+{
+    "name": "TempNUS",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "An Extension that reminds you (and helps you) to submit your temperature! Non-COVID Symptoms ONLY",
+    "icons": {
+        "16": "thermometer.png",
+        "48": "thermometer.png",
+        "128": "thermometer.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://myaces.nus.edu.sg/htd/htd?*"],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "default_icon": "thermometer.png",
+        "default_title": "Temperature Update"
+    },
+    "permissions": ["tabs"]
+}
